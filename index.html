@@ -1,0 +1,1383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>New Products & Our Collection</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    
+    .newsletter-section {
+        background-color: #eaeae3;
+        padding: 50px 0;
+        text-align: center;
+    }
+    .newsletter-input {
+        border-radius: 50px 0 0 50px;
+        border: 1px solid #ccc;
+        padding: 10px 20px;
+        outline: none;
+        width: 100%;
+    }
+    .newsletter-btn {
+        border-radius: 0 50px 50px 0;
+        padding: 10px 20px;
+        background-color: black;
+        color: white;
+        border: none;
+    }
+    /* Footer */
+    footer {
+        background-color: black;
+        color: white;
+        padding: 50px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    footer a {
+        color: #ccc;
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 400;
+        display: inline-block;
+        padding: 4px 0;
+        line-height: 2.2;
+        
+    }
+    footer a:hover {
+        color: white;
+    }
+    .footer-logo {
+        font-size: 40px;
+        font-weight: bold;
+        display: inline-block;
+        margin-bottom: 10px;
+    }
+    .social-icons a {
+        color: white;
+        margin-right: 15px;
+        font-size: 20px;
+    }
+    footer h6{
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 15px;
+
+    }
+
+     .card {
+      border: none;
+      background: transparent;
+      width: 250px;
+      flex-shrink: 0;
+    }
+
+    .image-wrapper {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .image-wrapper img {
+      transition: 0.3s ease-in-out;
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .hover-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: none;
+    }
+
+    .image-wrapper:hover .default-img {
+      display: none;
+    }
+
+    .image-wrapper:hover .hover-img {
+      display: block;
+    }
+
+    .scroll-container {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding: 10px;
+    }
+
+    .scroll-container::-webkit-scrollbar {
+      display: none;
+    }
+
+    .scroll-btn {
+      background: none;
+      border: none;
+      font-size: 2rem;
+      color: #333;
+      cursor: pointer;
+    }
+
+    .scroll-btn:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+
+    @media (min-width: 768px) {
+      .scroll-btn {
+        display: none;
+      }
+
+      .scroll-container {
+        overflow-x: hidden;
+        justify-content: center;
+        gap: 1rem;
+      }
+    }
+     .header {
+      position: relative;
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .header video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 2;
+    }
+
+    .content-center {
+      position: relative;
+      z-index: 3;
+      text-align: center;
+      color: white;
+    }
+
+    .content-center h1 {
+      font-size: 3rem;
+     
+      margin-bottom: 20px;
+    }
+
+    .content-center .btn {
+      border-radius: 50%;
+      padding: 10px 30px;
+      font-weight: 500;
+      width: 100px;
+      height: 100px;
+      border: 1px solid white;
+      display: inline;
+    }
+    
+
+    .navbar {
+      z-index: 999;
+      position: relative;
+      transition: background-color 0.3s ease;
+      border-bottom: 1px solid white; /* Updated to 1px */
+      width: auto; /* Important to match container-fluid */
+    }
+
+    .navbar-nav .nav-link {
+      color: white !important;
+      margin: 0 5px;
+      font-weight: 300;
+      transition: color 0.3s ease;
+      padding: 10px;
+    }
+
+    .nav-icons .bi {
+      font-size: 1.1rem;
+      color: white;
+      margin-left: 20px;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .dropdown:hover .dropdown-menu {
+      display: block;
+      margin-top: 0;
+    }
+
+    .dropdown-menu {
+      background-color: #F6F8F2;;
+      padding: 20px;
+      border: none;
+      width: 100vw !important; /* Force dropdown to full viewport width */
+      left: 0 !important; /* Align to left */
+      right: 0 !important; /* Align to right */
+      top: 100% !important; /* Ensure dropdown appears just below navbar */
+      position: absolute !important; /* Override Bootstrap default */
+    }
+
+    .dropdown-menu .col {
+      text-align: center;
+      margin-bottom: 10px;
+      justify-content: space-between;
+    }
+
+    .dropdown-menu a {
+      color: rgb(15, 15, 15);
+      display: block;
+      padding: 8px 0;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .dropdown-menu a:hover {
+      color: #31302d;
+    }
+
+    .navbar:hover {
+      background-color: #F6F8F2 !important;
+    }
+
+    .navbar:hover .nav-link,
+    .navbar:hover .bi,
+    .navbar:hover .center-logo {
+      color: black !important;
+    }
+
+    @media (max-width: 991px) {
+      .dropdown-menu {
+        min-width: 100%;
+      }
+
+      .navbar-collapse {
+        text-align: center;
+      }
+
+      .nav-icons {
+        justify-content: space-between;
+        align-items: center;
+        
+      }
+
+      .content-center h1 {
+        font-size: 2rem;
+      }
+    }
+
+    .navbar .nav-link {
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 50%;
+      padding: 35px;
+      
+      
+    }
+
+    .nav-icons i {
+      font-size: .7rem;
+      margin-left: 15px;
+      cursor: pointer;
+    }
+
+    .dropdown-menu h6 {
+      font-weight: 700;
+    }
+
+    .dropdown-menu p {
+      font-weight: 400;
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+
+    .center-logo {
+      text-align: center;
+    }
+
+    .dropdown-menu ul li a {
+      font-weight: 500;
+      font-size: 15px;
+    }
+    
+
+    .navbar .nav-item {
+      margin-right: 20px;
+    }
+        
+    .search-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 95vh;
+  background-color: rgba(0, 0, 0, 0.99);
+  z-index: 2000;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 5%;
+}
+
+.search-popup-content {
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.search-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #aaa;
+  color: white;
+  font-size: 1.4rem;
+  font-weight: bold ;
+  padding: 10px 0;
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: #ddd;
+  font-weight: 700;
+}
+
+.btn-close-popup {
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+.cart-popup {
+  position: fixed;
+  top: 0;
+  right: -40vw; /* Initially hidden off-screen */
+  width: 40vw;
+  height: 100vh;
+  background-color: #111; /* dark background */
+  color: white;
+  z-index: 3000;
+  transition: right 0.3s ease;
+  padding: 30px;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.6);
+}
+
+.cart-popup.open {
+  right: 0;
+}
+/* Default arrow pointing down */
+.nav-link.dropdown-toggle::after {
+  margin-left: 6px;
+  transition: transform 0.3s ease;
+}
+
+/* Rotate arrow when dropdown (parent) is hovered */
+.nav-item.dropdown:hover > .nav-link.dropdown-toggle::after {
+  transform: rotate(180deg);
+}
+
+.btn-close-cart {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+.cart-content {
+  margin-top: 50px;
+}
+    
+
+  </style>
+</head>
+<body>
+  <header class="header .container">
+  <video autoplay muted loop>
+    <source src="video/video.mp4" type="video/mp4">
+  </video>
+
+  <div class="overlay"></div>
+
+  <div class="content-center">
+    <h1>Bold Coffee Moment</h1>
+    <a href="#" class="btn text-white rounded">Shop Now</a>
+  </div>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-transparent w-100 position-absolute top-0">
+    <div class="container-fluid position-relative">
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex align-items-center">
+          <li class="nav-item dropdown position-static">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Shop Christmas
+            </a>
+            <div class="dropdown-menu py-4 px-4">
+              <div class="row w-100 justify-content-center">
+                <div class="col-md-3 mb-3 text-start">
+                  <h6 class="fw-bold mb-3">Shop Christmas Coffee</h6>
+                  <ul class="list-unstyled">
+                    <li><a class="dropdown-item px-0" href="#">Shop Christmas</a></li>
+                    <li><a class="dropdown-item px-0" href="#">Single Origin</a></li>
+                    <li><a class="dropdown-item px-0" href="#">Subscription</a></li>
+                    <li><a class="dropdown-item px-0" href="#">Capsules</a></li>
+                    <li><a class="dropdown-item px-0" href="#">Gift Card</a></li>
+                  </ul>
+                </div>
+                <div class="col-md-4 mb-3 text-center">
+                  <img src="./images/shopChristmis1.png" class="img-fluid mb-2 rounded" alt="Gift Box">
+                  <h6 class="fw-bold mb-1">Clifton Merchandise</h6>
+                  <p class="text-muted">Clifton Coffee X Zara Mcdermott</p>
+                </div>
+                <div class="col-md-4 mb-3 text-center">
+                  <img src="./images/shopChristmas2.png" class="img-fluid mb-2 rounded" alt="Christmas Blend">
+                  <h6 class="fw-bold mb-1">Brewing Equipment</h6>
+                  <p class="text-muted">MiiR X Clifton Coffee</p>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown position-static">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Coffee
+            </a>
+            <div class="dropdown-menu py-4 px-4">
+              <div class="d-flex justify-content-between flex-wrap w-100 text-start">
+                <div class="col-md-3 mb-3">
+                  <h6 class="fw-bold mb-3">Current Coffees</h6>
+                  <ul class="list-unstyled">
+                    <li><a class="dropdown-item px-0" href="#">All Coffee</a></li>
+                    <li><a class="dropdown-item px-0" href="#">House Coffees</a></li>
+                    <li><a class="dropdown-item px-0" href="#">Single Origin</a></li>
+                    <li><a class="dropdown-item px-0" href="#">Clifton Capsules</a></li>
+                    <li><a class="dropdown-item px-0" href="#">Unparalleled Series</a></li>
+                  </ul>
+                </div>
+                <div class="col-md-3 mb-3">
+                  <h6 class="fw-bold mb-3">Coffee Types</h6>
+                  <ul class="list-unstyled">
+                    <li><a class="dropdown-item px-0" href="#">Wholebean</a></li>
+                    <li><a class="dropdown-item px-0" href="#">Grind Filter</a></li>
+                    <li><a class="dropdown-item px-0" href="#">Cafetière Grind</a></li>
+                  </ul>
+                </div>
+                <div class="col-md-3 mb-3 text-center">
+                  <img src="./images/cofee1.png" class="img-fluid mb-2 rounded" alt="Placeholder Image 1">
+                  <h6 class="fw-bold mb-1">Cadence Espresso</h6>
+                  <p class="text-muted small mb-0">Autumn Edition</p>
+                </div>
+                <div class="col-md-3 mb-3 text-center">
+                  <img src="./images/cofee2.png" class="img-fluid mb-2 rounded" alt="Placeholder Image 2">
+                  <h6 class="fw-bold mb-1">E1 Project Espresso</h6>
+                  <p class="text-muted small mb-0">Finca Buena Vista</p>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown position-static">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Subscriptions
+            </a>
+           <div class="dropdown-menu py-4 px-4">
+              <div class="d-flex justify-content-between flex-wrap w-100 text-start">
+                <div class="col-md-3 mb-3">
+                  <h6 class="fw-bold mb-3">Coffee Subscriptions</h6>
+                  <ul class="list-unstyled">
+                    <li><a class="dropdown-item px-0" href="#">Single Origin Subscription</a></li>
+                    <li><a class="dropdown-item px-0" href="#">House Coffee Subscription</a></li>
+                    <li><a class="dropdown-item px-0" href="#">Single Origin Subscription Videos</a></li>
+                    <li><a class="dropdown-item px-0" href="#">Log in</a></li>
+                    
+                  </ul>
+                </div>
+                <div class="col-md-3 mb-3">
+                  <h6 class="fw-bold mb-3">Coffee Types</h6>
+                  <ul class="list-unstyled">
+                    <li><a class="dropdown-item px-0" href="#">Wholebean</a></li>
+                    <li><a class="dropdown-item px-0" href="#">Filter grind</a></li>
+                    <li><a class="dropdown-item px-0" href="#">Cafetière grind</a></li>
+                    
+                    
+                  </ul>
+                </div>
+                <div class="col-md-3 mb-3 text-center">
+                  <img src="./images/Subscrib1.png" class="img-fluid mb-2 rounded" alt="Placeholder Image 1">
+                  <h6 class="fw-bold mb-1"> Suspension Espresso</h6>
+                  <p class="text-muted small mb-0">Brazil | Fazenda Pinhal</p>
+                </div>
+                <div class="col-md-3 mb-3 text-center">
+                  <img src="./images/subscribe2.png" class="img-fluid mb-2 rounded" alt="Placeholder Image 2">
+                  <h6 class="fw-bold mb-1">E1 Project Espresso</h6>
+                  <p class="text-muted small mb-0">Finca Buena Vista</p>
+                </div>
+              </div>
+            </div>
+            
+          </li>
+
+          <li class="nav-item dropdown position-static">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Accessories
+            </a>
+            <div class="dropdown-menu py-4 px-4">
+              <div class="d-flex justify-content-between flex-wrap w-100 text-start">
+                <div class="col-md-2 mb-2">
+                  <h6 class="fw-bold mb-2">All Equipment</h6>
+                  <ul class="list-unstyled">
+                    <li><a class="dropdown-item px-0" href="#">Machines</a></li>
+                    <li><a class="dropdown-item px-0" href="#">Brewers</a></li>
+                    <li><a class="dropdown-item px-0" href="#">Grinders</a></li>
+                  </ul>
+                </div>
+                <div class="col-md-2 mb-2">
+                  <h6 class="fw-bold mb-3">Merchandise</h6>
+                  <ul class="list-unstyled">
+                    <li><a class="dropdown-item px-0" href="#">Kettles</a></li>
+                    <li><a class="dropdown-item px-0" href="#">Scales</a></li>
+                    <li><a class="dropdown-item px-0" href="#">Tools</a></li>
+                  </ul>
+                </div>
+                <div class="col-md-2 mb-2">
+                  <h6 class="fw-bold mb-3">BrandsAcaia</h6>
+                  <ul class="list-unstyled">
+                    <li><a class="dropdown-item px-0" href="#">Aeropress</a></li>
+                    <li><a class="dropdown-item px-0" href="#">Earl Of East</a></li>
+                    <li><a class="dropdown-item px-0" href="#">Fellow</a></li>
+                    <li><a class="dropdown-item px-0" href="#">Hario</a></li>
+                    <li><a class="dropdown-item px-0" href="#">La Marzocco</a></li>
+                    <li><a class="dropdown-item px-0" href="#">Miir</a></li>
+                    <li><a class="dropdown-item px-0" href="#">Pesado</a></li>
+                    <li><a class="dropdown-item px-0" href="#">Rural Kind</a></li>
+                    <li><a class="dropdown-item px-0" href="#">Wilfa</a></li>
+                  </ul>
+                </div>
+                <div class="col-md-3 mb-3 text-center">
+                  <img src="./images/assesries1.png" class="img-fluid mb-2 rounded" alt="Placeholder Image 1">
+                  <h6 class="fw-bold mb-1"> Suspension Espresso</h6>
+                  <p class="text-muted small mb-0">Brazil | Fazenda Pinhal</p>
+                </div>
+                <div class="col-md-3 mb-3 text-center">
+                  <img src="./images/assesries2.png" class="img-fluid mb-2 rounded" alt="Placeholder Image 2">
+                  <h6 class="fw-bold mb-1">Morning Machine</h6>
+                  <p class="text-muted small mb-0"> OPAL One Coffee Pod Machine</p>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Center Logo -->
+      <a class="navbar-brand center-logo text-white text-center" href="#" style="line-height: 1.2;">
+        <div style="font-weight: 900; font-size: 1.9rem; letter-spacing: 2px;">CLIFTON</div>
+        <div style="font-size: 0.7rem; letter-spacing: 3px;">COFFEE ROASTERS</div>
+      </a>
+
+      <!-- Right Side -->
+      <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
+        <ul class="navbar-nav mb-2 mb-lg-0 d-flex align-items-center">
+          <li class="nav-item"><a class="nav-link" href="#">Wholesale</a></li>
+          <li class="nav-item dropdown position-static">
+            <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Education
+            </a>
+            <div class="dropdown-menu py-4 px-4">
+              <div class="row w-100 justify-content-center">
+                <div class="col-md-3 mb-3 text-start">
+                  <h6 class="fw-bold mb-3">Training Guides</h6>
+                  <ul class="list-unstyled">
+                    <li><a class="dropdown-item px-0" href="#">Book Training</a></li>
+                    <li><a class="dropdown-item px-0" href="#">Training Videos</a></li>
+                    <li><a class="dropdown-item px-0" href="#">Our Education</a></li>
+                    <li><a class="dropdown-item px-0" href="#">Training Calendar</a></li>
+                    
+                  </ul>
+                </div>
+                <div class="col-md-4 mb-3 text-center">
+                  <img src="./images/education1.png" class="img-fluid mb-2 rounded" alt="Gift Box">
+                  <h6 class="fw-bold mb-1">Training Videos</h6>
+                  <p class="text-muted">Coffee Training Videos</p>
+                </div>
+                <div class="col-md-4 mb-3 text-center">
+                  <img src="./images/education2.png" class="img-fluid mb-2 rounded" alt="Christmas Blend">
+                  <h6 class="fw-bold mb-1">  Training & Support</h6>
+                  <p class="text-muted">Award winning training and support</p>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#">Our Ethos</a></li>
+          <li class="nav-item d-flex align-items-center nav-icons">
+            <i class="bi bi-person-circle"></i>
+            <i class="bi bi-search"></i>
+            <i class="bi bi-cart"></i>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<div id="searchPopup" class="search-popup">
+  <button class="btn-close-popup" onclick="closeSearch()">&times;</button>
+  <div class="search-popup-content">
+    <input type="text" class="search-input" placeholder="Start search">
+  </div>
+</div>
+
+<div id="cartPopup" class="cart-popup">
+  <button class="btn-close-cart" onclick="closeCart()">&times;</button>
+  <div class="cart-content">
+    <h4>Your Cart</h4>
+    <p>No items in your cart.</p>
+    <!-- You can add dynamic cart content here -->
+  </div>
+</div>
+
+
+
+  <section class="collection-section">
+  <h2>Our Collections</h2>
+
+  <div class="collection-slider" data-slider>
+    <div class="collection-wrapper">
+      <button class="collection-arrow left" data-prev>&#10094;</button>
+
+      <div class="collection-slides-container" data-slides>
+        <div class="collection-slide">
+          <div class="image-wrapper">
+            <img src="images/ourcollection1.png" class="default-img" />
+            <img src="images/collectionH1.png" class="hover-img" />
+          </div>
+          <div class="collection-caption">
+            All Coffee<br><a href="#">Shop Now</a>
+          </div>
+        </div>
+
+        <div class="collection-slide">
+          <div class="image-wrapper">
+            <img src="images/ourcollection2.png" class="default-img" />
+            <img src="images/collectionH2.png" class="hover-img" />
+          </div>
+          <div class="collection-caption">
+            Clifton Tea<br><a href="#">Shop Now</a>
+          </div>
+        </div>
+
+        
+
+        <div class="collection-slide">
+          <div class="image-wrapper">
+            <img src="images/ourcollection3.png" class="default-img" />
+            <img src="images/collectionH3.png" class="hover-img" />
+          </div>
+          <div class="collection-caption">
+            Clifton Merchandise<br><a href="#">Shop Now</a>
+          </div>
+        </div>
+      </div>
+
+      <button class="collection-arrow right" data-next>&#10095;</button>
+    </div>
+
+    <div class="collection-dots text-center" data-dots>
+      <span class="active"></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</section>
+
+
+<section class="py-5">
+  <div class="container-fluid">
+    <div class="text-center section-head">
+      <h2 class="fw-bold">New Products</h2>
+      <p class="mb-0">Discover our premium coffee collections crafted for every taste!</p>
+    </div>
+
+    <div class="row g-3">
+      <!-- LEFT GALLERY -->
+      <div class="col-md-6">
+        <div id="galleryGrid" aria-hidden="false"></div>
+      </div>
+
+      <!-- RIGHT PRODUCTS -->
+      <div class="col-md-6">
+        <!-- Tabs -->
+        <ul class="nav nav-pills mb-3" id="productTabs">
+          <li class="nav-item"><a class="nav-link active" href="#" data-category="coffee">Coffee</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" data-category="capsule">Capsule</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" data-category="all">All</a></li>
+        </ul>
+
+        <!-- Swiper -->
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper" id="productSliderContent"></div>
+          <div class="swiper-button-prev" aria-label="Previous"></div>
+          <div class="swiper-button-next" aria-label="Next"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="shop-coffee-banner position-relative text-white">
+  <div class="coffee-banner-bg"></div>
+  <div class="container h-100">
+    <div class="row align-items-center h-100">
+      <div class="col-md-8 col-lg-6">
+        <div class="coffee-banner-content">
+          <p class="coffee-label">Clifton Coffee — Speciality Coffee</p>
+          <h1 class="coffee-title">Shop coffee</h1>
+          <p class="coffee-description">
+            Discover your perfect cup of coffee—crafted to match your taste and style. Wake up to perfection every day!
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!--Capsule-->
+
+<!-- ✅ Clifton Custom Vertical Slider -->
+<div class="swiper clifton-swiper">
+  <div class="swiper-wrapper">
+
+    <!-- Slide 1 - Capsules -->
+    <div class="swiper-slide clifton-slide-capsule">
+      <div class="container">
+        <div class="row align-items-center h-100">
+          <div class="col-md-6 text-section">
+            <h1>Clifton Capsules</h1>
+            <p>The wait is finally over, our capsules are back and better than ever. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout……</p>
+            <button class="btn btn-outline-dark">Read More</button>
+          </div>
+          <div class="col-md-6">
+            <img src="images/product Two.png" alt="Capsule" class="capsule-image" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 2 - Clifton Tea -->
+    <div class="swiper-slide">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-4">
+            <div class="clifton-section-title">Explore Our More Collection</div>
+            <ul class="list-unstyled small">
+              <li><strong>Clifton Capsules</strong></li>
+              <li><strong>Clifton Tea</strong></li>
+              <li class="text-muted">Dummy Text long established fact that a reader will be distracted. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</li>
+              <li class="mt-2">Clifton Chai</li>
+              <li>Clifton Hot Chocolate</li>
+            </ul>
+          </div>
+          <div class="col-md-8">
+            <div class="clifton-slide-header">
+              <span>Clifton Tea</span>
+              <span class="text-muted">View All</span>
+            </div>
+            <div class="d-flex gap-3 justify-content-end">
+              <div class="clifton-product-card">
+                <img src="images/1.png" alt="Earl Grey">
+                <div class="card-body">
+                  <div class="clifton-product-label">Earl Grey</div>
+                  <div class="clifton-product-description">
+                    Our bright and zingy Earl Grey combines a traditional blend of high-quality Sicilian bergamot oil with Keemun tea harvested from the Qimen county of Anhui.
+                  </div>
+                  <div class="clifton-product-price mt-2">£42.00</div>
+                </div>
+              </div>
+              <div class="clifton-product-card">
+                <img src="images/capsule2.png" alt="Pure Peppermint">
+                <div class="card-body">
+                  <div class="clifton-product-label">Pure Peppermint</div>
+                  <div class="clifton-product-description">
+                    Our irresistibly refreshing peppermint tea was harvested from the plains of Kosovo, a region known for growing some of the world’s highest-quality peppermint.
+                  </div>
+                  <div class="clifton-product-price mt-2">£43.00</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3 - Clifton Chai -->
+    <div class="swiper-slide">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-4">
+            <div class="clifton-section-title">Explore Our More Collection</div>
+            <ul class="list-unstyled small">
+              <li><strong>Clifton Capsules</strong></li>
+              <li><strong>Clifton Tea</strong></li>
+              <li><strong>Clifton Chai</strong></li>
+              <li class="text-muted">Dummy Text long established fact that a reader will be distracted. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</li>
+              <li class="mt-2">Clifton Hot Chocolate</li>
+            </ul>
+          </div>
+          <div class="col-md-8">
+            <div class="clifton-slide-header">
+              <span>Clifton Chai</span>
+              <span class="text-muted">View All</span>
+            </div>
+            <div class="d-flex gap-3 justify-content-end">
+              <div class="clifton-product-card">
+                <img src="images/chay.png" alt="Chai">
+                <div class="card-body">
+                  <div class="clifton-product-label">Clifton Chai</div>
+                  <div class="clifton-product-description">
+                    Chai is one of the most popular drinks in India, used in Ayurvedic medicine for its calming and revitalizing effect on the body and mind.
+                  </div>
+                  <div class="clifton-product-price mt-2">£15.00</div>
+                </div>
+              </div>
+              <div class="clifton-product-card">
+                <img src="images/chay (1).png" alt="Chai Bottle">
+                <div class="card-body">
+                  <div class="clifton-product-label">Clifton Chai</div>
+                  <div class="clifton-product-description">
+                    Chai is one of the most popular drinks in India, used in Ayurvedic medicine for its calming and revitalizing effect on the body and mind.
+                  </div>
+                  <div class="clifton-product-price mt-2">£15.00</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 4 - Capsules Again -->
+    <div class="swiper-slide clifton-slide-capsule">
+      <div class="container">
+        <div class="row align-items-center h-100">
+          <div class="col-md-6 text-section">
+            <h1>Clifton Capsules</h1>
+            <p>The wait is finally over, our capsules are back and better than ever. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout……</p>
+            <button class="btn btn-outline-dark">Read More</button>
+          </div>
+          <div class="col-md-6">
+            <img src="images/product Two.png" alt="Capsule" class="capsule-image" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Pagination -->
+  <div class="swiper-pagination d-flex position-absolute"></div>
+</div>
+
+
+
+<!--Our Favorites-->
+<section class="text-center py-5 fav">
+  <div class="container ">
+    <h2><strong>Our Favorites</strong></h2>
+
+    <!-- Swiper -->
+    <div class="swiper favoriteProductsSwiper mt-4">
+      <div class="swiper-wrapper">
+
+        <!-- Slide 1 -->
+        <div class="swiper-slide">
+          <div class="product-card">
+            <img src="/images/packet 7 (1).png" alt="Peru" />
+            <div class="hover-overlay text-start">
+              <p>Region <span>Ahuachapán</span></p>
+              <p>Producer <span>Ricardo Lima</span></p>
+              <p>Process <span>Natural</span></p>
+              <div class="text-center mt-3">
+                <button class="btn">Buy Now</button>
+              </div>
+            </div>
+            <div class="product-info">
+              <div class="product-title">Peru</div>
+              <div class="product-price">£13.50</div>
+              <div class="product-rating">★★★★★</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="swiper-slide">
+          
+          <div class="product-card">
+            <img src="/images/packet 8.png" alt="Indonesia" />
+            <div class="hover-overlay">
+              <label>Weight</label>
+              <select><option>250g</option><option>500g</option></select>
+              <label>Roast</label>
+              <select><option>Filter Roast</option><option>Espresso</option></select>
+              <label>Wholebean or Ground</label>
+              <select><option>Wholebean</option><option>Ground</option></select>
+              <label>Quantity</label>
+              <input type="number" value="1" min="1" />
+              <button class="btn mt-2">Add to Cart</button>
+            </div>
+            <div class="product-info">
+              <div class="product-title">Indonesia</div>
+              <div class="product-price">£13.50</div>
+              <div class="product-rating">★★★★★</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="swiper-slide">
+          <div class="product-card">
+            <img src="images/packet 9.png" alt="Kenya" />
+            <div class="hover-overlay text-start">
+              <p>Region <span>Nairobi</span></p>
+              <p>Producer <span>Mbogo Estates</span></p>
+              <p>Process <span>Washed</span></p>
+              <div class="text-center mt-3">
+                <button class="btn">Buy Now</button>
+                <a href="" class="my-4">Read More</a>
+              </div>
+            </div>
+            <div class="product-info">
+              <div class="product-title">Kenya</div>
+              <div class="product-price">£13.50</div>
+              <div class="product-rating">★★★★★</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="swiper-slide">
+          <div class="product-card">
+            <img src="images/packet 10 (1).png" alt="Panama" />
+            <div class="hover-overlay">
+              <label>Weight</label>
+              <select><option>250g</option><option>1kg</option></select>
+              <label>Roast</label>
+              <select><option>Espresso</option><option>Light</option></select>
+              <label>Wholebean or Ground</label>
+              <select><option>Wholebean</option><option>Ground</option></select>
+              <label>Quantity</label>
+              <input type="number" value="1" min="1" />
+              <button class="btn mt-2">Add to Cart</button>
+            </div>
+            <div class="product-info">
+              <div class="product-title">Panama</div>
+              <div class="product-price">£13.50</div>
+              <div class="product-rating">★★★★★</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Swiper pagination -->
+      <div class="swiper-pagination "></div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- subscription section -->
+<div class="container py-5 sub">
+  <div class="row g-4 align-items-stretch">
+
+    <!-- Card 1 -->
+    <div class="col-md-6">
+      <div class="image-card">
+        <!-- Base image -->
+        <img src="images/subscription (3).png" alt="Subscriptions" class="img-fluid">
+        <!-- Hover image -->
+        <img src="images/sub1.png" alt="Subscriptions Hover" class="img-hover">
+        <div class="overlay">
+          <h3>Subscriptions</h3>
+          <p>Ethically sourced and direct to your door</p>
+          <a href="#" class="btn btn-outline-light btn-sm">Read More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="col-md-6">
+      <div class="image-card">
+        <!-- Base image -->
+        <img src="images/subscription (4).png" alt="Brazil Trip" class="img-fluid">
+        <!-- Hover image -->
+        <img src="images/subscription (1).png" alt="Brazil Trip Hover" class="img-hover">
+        <div class="overlay">
+          <h3>Brazil Trip 2024</h3>
+          <p>Blogs</p>
+          <a href="#" class="btn btn-outline-light btn-sm">Read More</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+<!--virtual section-->
+<section class="virtual-section">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <!-- Left Content -->
+      <div class="col-lg-6 d-flex flex-column align-items-center text-center">
+        <h2><strong>Virtual Tours</strong></h2>
+        <p class="mt-3">
+          Come and have a walk through our HQ, take a look at our roastery, training room, showrooms, cupping room and engineering bay!
+          A little bit on Future Virtual Ltd – We are a Brighton & Bristol based family business, covering the whole of the UK.
+          We are leading the way in creating stunning, fully immersive & interactive 360 virtual tours across all industries such as business.
+        </p>
+        <button class="read-more-btn mt-3">Read More</button>
+      </div>
+
+      <!-- Right Image with Hover Effect -->
+      <div class="col-lg-6">
+        <div class="virtual-img-wrapper">
+          <!-- Default Image -->
+          <img
+            src="images/virtual tour.png"
+            alt="Virtual Tour"
+            class="img-fluid"
+          />
+          <!-- Hover Image -->
+          <img
+            src="images/image (3).png"
+            alt="Virtual Tour Hover"
+            class="hover-img img-fluid"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<!--Stars-->
+<div class="container text-start py-5">
+  <h2 class="text-center"><strong>Thousands of 5 Star Reviews</strong></h2>
+
+  <!-- Swiper -->
+<div class="swiper myReviewSwiper mt-4">
+  <div class="swiper-wrapper">
+    <!-- Slide 1 -->
+    <div class="swiper-slide">
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="fw-semibold mt-2">All I can say is wow</p>
+        <p>The coffee Cometeer experience is incredible. It’s having a high end cup of coffee from a boutique coffee shop at my fingertips</p>
+        <div class="reviewer">Michel F.</div>
+      </div>
+    </div>
+
+    <!-- Repeat slides -->
+    <div class="swiper-slide">
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="fw-semibold mt-2">All I can say is wow</p>
+        <p>The coffee Cometeer experience is incredible. It’s having a high end cup of coffee from a boutique coffee shop at my fingertips</p>
+        <div class="reviewer">Michel F.</div>
+      </div>
+    </div>
+
+    <div class="swiper-slide">
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="fw-semibold mt-2">All I can say is wow</p>
+        <p>The coffee Cometeer experience is incredible. It’s having a high end cup of coffee from a boutique coffee shop at my fingertips</p>
+        <div class="reviewer">Michel F.</div>
+      </div>
+    </div>
+
+    <div class="swiper-slide">
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="fw-semibold mt-2">All I can say is wow</p>
+        <p>The coffee Cometeer experience is incredible. It’s having a high end cup of coffee from a boutique coffee shop at my fingertips</p>
+        <div class="reviewer">Michel F.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ✅ Moved inside the swiper container, unique class -->
+  <div class="swiper-pagination swiper-pagination-review"></div>
+</div>
+
+
+  <!-- Dots pagination -->
+  <div class="swiper-pagination"></div>
+</div>
+
+<!--cliftoncoffee section>-->
+
+<!-- Instagram Section -->
+<div class="container text-center py-5 ">
+  <h5><strong>@cliftoncoffee</strong></h5>
+  <p class="text-muted">Follow us on Instagram for the latest updates!</p>
+
+  <!-- Swiper -->
+  <div class="swiper myInstaSwiper insta-swiper mt-4">
+    <div class="swiper-wrapper">
+      <!-- Slide 1 -->
+      <div class="swiper-slide">
+        <img src="images/1.png" alt="Coffee 1" />
+        <div class="insta-overlay">
+          <i class="fab fa-instagram insta-icon"></i>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="swiper-slide">
+        <img src="images/2.png" alt="Coffee 2" />
+        <div class="insta-overlay">
+          <i class="fab fa-instagram insta-icon"></i>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="swiper-slide">
+        <img src="images/3.png" alt="Coffee 3" />
+        <div class="insta-overlay">
+          <i class="fab fa-instagram insta-icon"></i>
+        </div>
+      </div>
+
+      <!-- Slide 4 -->
+      <div class="swiper-slide">
+        <img src="images/4.png" alt="Coffee 4" />
+        <div class="insta-overlay">
+          <i class="fab fa-instagram insta-icon"></i>
+        </div>
+      </div>
+
+      <!-- Slide 5 -->
+      <div class="swiper-slide">
+        <img src="images/5.png" alt="Coffee 5" />
+        <div class="insta-overlay">
+          <i class="fab fa-instagram insta-icon"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pagination -->
+  <div class="swiper-pagination-insta"></div>
+</div>
+
+
+
+<!-- Newsletter Section -->
+<section class="newsletter-section">
+    <h2>Newsletter</h2>
+    <p>The latest coffees, offers and news from the Clifton.</p>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 d-flex">
+                <input type="email" class="newsletter-input" placeholder="Enter your email address">
+                <button class="newsletter-btn"><i class="fa fa-arrow-right"></i></button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container-fluid">
+        <div class="row gy-4 align-items-start text-center text-md-start">
+            <!-- Column 1: Logo + Social -->
+            <div class="col-6 col-md ">
+                <div class="footer-logo"><img src="./images/B-Corp-Logo 2.png" alt=""></div>
+                
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <!-- Column 2: Shop -->
+            <div class="col-6 col-md">
+                <h6>Shop</h6>
+                <ul class="list-unstyled">
+                    <li><a href="#">Clifton Merchandise</a></li>
+                    <li><a href="#">Brewing Equipment</a></li>
+                    <li><a href="#">Clifton Hot Chocolate</a></li>
+                    <li><a href="#">Clifton Tea</a></li>
+                    <li><a href="#">Gift Card</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Coffee -->
+            <div class="col-6 col-md">
+                <h6>Coffee</h6>
+                <ul class="list-unstyled g-2">
+                    <li><a href="#">All Coffee</a></li>
+                    <li><a href="#">House Coffees</a></li>
+                    <li><a href="#">Single Origin</a></li>
+                    <li><a href="#">Clifton Capsules</a></li>
+                    <li><a href="#">Unparalleled Series</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 4: Our Ethos -->
+            <div class="col-6 col-md">
+                <h6>Our Ethos</h6>
+                <ul class="list-unstyled">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Resources</a></li>
+                    <li><a href="#">Origin Films</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">HQ Virtual Tour</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 5: Contact Us -->
+            <div class="col-12 col-md">
+                <h6>Contact Us</h6>
+                <p><i class="fa fa-envelope"></i> sales@cliftoncoffee.co.uk</p>
+                <p><i class="fa fa-phone"></i> +44 (0) 1179 820 252</p>
+                <p><i class="fa fa-map-marker-alt"></i> Write address here...</p>
+            </div>
+        </div>
+
+        <!-- Footer bottom -->
+        <div class="text-center mt-4">
+            <small>2025 © Clifton Coffee Roasters | Privacy Policy</small>
+        </div>
+    </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+ const swiper = new Swiper('.clifton-swiper', {
+    direction: 'vertical',
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    },
+    mousewheel: true,
+  });
+
+const favoriteSwiper = new Swiper(".favoriteProductsSwiper", {
+    slidesPerView: 1.2,
+    spaceBetween: 20,
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    breakpoints: {
+      576: {
+        slidesPerView: 2,
+      },
+      768: {
+        slidesPerView: 3,
+      },
+      992: {
+        slidesPerView: 4,
+      }
+    }
+  });
+
+  const instaSwiper = new Swiper(".myInstaSwiper", {
+    slidesPerView: 1.2,
+    spaceBetween: 10,
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination-insta",
+      clickable: true,
+    },
+    breakpoints: {
+      576: {
+        slidesPerView: 2.2,
+      },
+      768: {
+        slidesPerView: 3,
+      },
+      992: {
+        slidesPerView: 5,
+      }
+    }
+  }); 
+
+  const reviewSwiper = new Swiper(".myReviewSwiper", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination-review", // ✅ unique selector
+      clickable: true,
+    },
+    breakpoints: {
+      576: {
+        slidesPerView: 1.2,
+      },
+      768: {
+        slidesPerView: 2,
+      },
+      992: {
+        slidesPerView: 3,
+      }
+    }
+  });
+
+
+</script>
+</body>
+</html>
